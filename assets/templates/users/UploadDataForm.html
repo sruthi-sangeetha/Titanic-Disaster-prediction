@@ -1,0 +1,31 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+{%block contents%}
+
+    <div class="row">
+
+        <section class="tm-section-intro">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="tm-wrapper-center">
+                    <h1 class="tm-section-intro-title">Exploratory Data Analysis and Machine Learning on Titanic Disaster Dataset</h1>
+                    <p class="tm-section-intro-text">
+
+                        <h3>User Climate Data Upload Page</h3>
+<form action="{%url 'UploadCSVToDataBase'%}" class="bg-light text-dark" enctype="multipart/form-data" method="POST">
+{%csrf_token%}
+    select CSV File <input name="file" required type="file">
+    <button class="btn-primary" name="sumbit"  type="submit">Submit</button>
+</form>
+                    </p>
+
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+    </div>
+
+{%endblock%}

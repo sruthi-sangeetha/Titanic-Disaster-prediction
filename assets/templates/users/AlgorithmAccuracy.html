@@ -1,0 +1,43 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+{%block contents%}
+
+    <div class="row">
+
+        <section class="tm-section-intro">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="tm-wrapper-center">
+                    <h1 class="tm-section-intro-title">Algorithm Scores</h1>
+                    <p class="tm-section-intro-text">
+
+                        <table class="table table-bordered bg-light text-dark ">
+                    <thead>
+                    <th>S.no</th>
+                    <th>Algorithm Name</th>
+                    <th>Accuracy</th>
+                    </thead>
+                    <tbody>
+
+                    {% for key, values in rsltDict.items  %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{key}}</td>
+                        <td>{{values}}</td>
+                    </tr>
+                    {%endfor%}
+                    </tbody>
+                </table>
+
+                    </p>
+
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+    </div>
+
+{%endblock%}

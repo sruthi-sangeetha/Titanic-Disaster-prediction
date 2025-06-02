@@ -1,0 +1,63 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+{%block contents%}
+
+   <div class="row">
+
+        <section class="tm-section-intro">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="tm-wrapper-center">
+                     <h2>User View Sample Training Data</h2>
+ <table class="table table-bordered bg-light text-dark">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>PassengerId</th>
+        <th>Pclass</th>
+        <th>Name</th>
+        <th>Sex</th>
+        <th>Age</th>
+        <th>SibSp</th>
+        <th>Parch</th>
+        <th>Ticket</th>
+        <th>Fare</th>
+        <th>Cabin</th>
+        <th>Embarked</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in data %}
+                                            <tr style="color: Black">
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{i.PassengerId}}</td>
+                                                <td>{{i.Pclass}}</td>
+                                                <td>{{i.Name}}</td>
+                                                <td>{{i.Sex}}</td>
+                                                <td>{{i.Age}}</td>
+                                                <td>{{i.SibSp}}</td>
+                                                <td>{{i.Parch}}</td>
+                                                <td>{{i.Ticket}}</td>
+                                                <td>{{i.Fare}}</td>
+                                                <td>{{i.Cabin}}</td>
+                                                <td>{{i.Embarked}}</td>
+
+                                            </tr>
+                                            {% endfor %}
+
+    </tbody>
+
+ </table>
+
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+    </div>
+
+
+{%endblock%}

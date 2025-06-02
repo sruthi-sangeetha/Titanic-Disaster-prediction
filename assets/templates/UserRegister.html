@@ -1,0 +1,87 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block contents%}
+ <div class="row tm-section tm-blue-bg-row">
+
+                <section>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center">
+                            <h2 class="tm-section-title">User Register Form</h2>
+                            <p class="tm-section-subtitle">
+                            <center>
+                            <form action="{%url 'UserRegisterAction'%}" method="POST">
+                        {% csrf_token %}
+
+                        <table>
+                            <tr>
+                                <td>Customer Name</td>
+                                <td>{{form.name}}</td>
+                            </tr>
+                            <tr>
+                                <td>Login ID</td>
+                                <td>{{form.loginid}}</td>
+                            </tr>
+                            <tr>
+                                <td>Password</td>
+                                <td>{{form.password}}</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile</td>
+                                <td>{{form.mobile}}</td>
+                            </tr>
+                            <tr>
+                                <td>email</td>
+                                <td>{{form.email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Locality</td>
+                                <td>{{form.locality}}</td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td>{{form.address}}</td>
+                            </tr>
+                            <tr>
+                                <td>City</td>
+                                <td>{{form.city}}</td>
+                            </tr>
+                            <tr>
+                                <td>State</td>
+                                <td>{{form.state}}</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>{{form.status}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <button class="btn btn-primary my-2 my-sm-0" style="margin-left:20%;" type="submit">
+                                        Register
+                                    </button>
+                                </td>
+                            </tr>
+
+                            {% if messages %}
+                            {% for message in messages %}
+                            <font color='GREEN'> {{ message }}</font>
+                            {% endfor %}
+                            {% endif %}
+
+                        </table>
+
+                    </form>
+</center>
+
+                            </p>
+                        </div>
+
+
+
+                </section>
+
+            </div> <!-- row -->
+
+
+
+{%endblock%}
